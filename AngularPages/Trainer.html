@@ -1,0 +1,36 @@
+
+
+<div class="jumbotron text-center">
+<h1> Welcome to Training Experts </h1>
+<p> {{message}}</p>
+</div>
+   <!--trainers-->
+
+<div class="container-fixed">
+
+<div id="dev">
+<div class="row" style ="border:2px solid blue" ng-repeat="item in TrainerSkills">
+    <div class="col-md-4">
+      <h3>{{item.FirstName+" "+item.LastName}} </h3>
+    </div>
+<div class="col-md-4">
+<h3>{{item.Designation}}</h3>
+</div>
+<div class="col-md-4">
+<h3>{{item.Course}}</h3>
+</div>
+
+
+</div>
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+

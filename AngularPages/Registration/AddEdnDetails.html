@@ -1,0 +1,48 @@
+﻿<div ng-controller="ednController" class="divStyle">
+    <div class="jumbotron">
+        <h2>Education Detaiils</h2>
+        <a href="#trainerPersonal">AddPersonal</a>||<a href="#education">Add Education</a>||<a href="#work">Work Experience</a>||
+        <a href="#trainingExp">Training Experience</a>||<a href="#skills">Add Skills</a>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <input type="button" value="Add" ng-click="clear()"/><br/>
+            <input type="hidden" ng-model="TrainerEdnId" readonly/><br />
+            Course:<input type="text" ng-model="Course" /><br />
+            Institution:<input type="text" ng-model="Institution" /><br />
+            From :  <input type="month" ng-model="FromMonth" /> | <input type="number" ng-model="FromYear" /><br />
+            To   : <input type="month" ng-model="ToMonth" /> | <input type="number" ng-model="ToYear" /><br />
+            Grade: <input type="text" ng-model="Grade" /><br />
+            <input type="button" value="save" ng-click="addEducationData()" /><input type="button" value="Delete" ng-click="delete()"/>
+        </div>
+    </div>
+    <!--list-->
+    <div id="dvCollection">
+     <h3>-----------------------------------------------------------------------------------------</h3>
+            <table>
+            <thead>
+                <tr>
+                    <th>Education ID</th>
+                    <th>Course</th>
+                    <th>Institution</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Grade</th>
+                    <th>trainerid</th>
+                </tr>
+            </thead>
+                <tbody ng-repeat=" item in TrainerEdnDetails | filter: {TrainerId:(query|number)}">
+                    <tr ng-click=" get(item)">
+                        <td> <span>{{item.TrainerEdnId}}</span></td>
+                        <td> <span>{{item.Course}}</span></td>
+                        <td> <span>{{item.Institution}}</span></td>
+                        <td> <span>{{item.FromMonth+" "+item.FromYear}}</span></td>
+                        <td> <span>{{item.ToMonth+" "+item.ToYear}}</span></td>
+                        <td> <span>{{item.Grade}}</span></td>
+                        <td> <span>{{item.TrainerId}}</span></td>
+                    </tr>
+                </tbody>
+           </table>
+        <h3>-----------------------------------------------------------------------------------------</h3>
+    </div>
+</div>

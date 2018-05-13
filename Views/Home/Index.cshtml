@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Home";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<div ng-controller="AngularController">
+    <h2>Training</h2>
+    {{$scope.message}}
+</div>
+@section scripts{
+    
+<script src="~/Angular/Module.js"></script>
+}

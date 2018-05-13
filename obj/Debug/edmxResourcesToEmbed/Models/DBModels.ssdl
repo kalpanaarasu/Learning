@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2005" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TrainerEdnDetails">
+    <Key>
+      <PropertyRef Name="TrainerEdnId" />
+    </Key>
+    <Property Name="TrainerEdnId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Course" Type="nvarchar" MaxLength="100" />
+    <Property Name="Institution" Type="nvarchar" MaxLength="100" />
+    <Property Name="FromMonth" Type="int" />
+    <Property Name="FromYear" Type="int" />
+    <Property Name="ToMonth" Type="int" />
+    <Property Name="ToYear" Type="int" />
+    <Property Name="Grade" Type="nvarchar" MaxLength="50" />
+    <Property Name="TrainerId" Type="int" />
+  </EntityType>
+  <EntityType Name="TrainerMaster">
+    <Key>
+      <PropertyRef Name="TrainerId" />
+    </Key>
+    <Property Name="TrainerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TrainerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="TrainerEmail" Type="nvarchar" MaxLength="50" />
+    <Property Name="TrainerPassword" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TrainerPersonalDetails">
+    <Key>
+      <PropertyRef Name="TrainerPersonalId" />
+    </Key>
+    <Property Name="TrainerPersonalId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="FatherName" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateOfBirth" Type="datetime" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddressPartOne" Type="nvarchar" MaxLength="150" />
+    <Property Name="AddressPartTwo" Type="nvarchar" MaxLength="150" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="Pincode" Type="int" />
+    <Property Name="State" Type="nvarchar" MaxLength="50" />
+    <Property Name="Country" Type="nvarchar" MaxLength="50" />
+    <Property Name="PhoneOne" Type="nvarchar" MaxLength="50" />
+    <Property Name="PhoneTwo" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmailOne" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmailTwo" Type="nvarchar" MaxLength="50" />
+    <Property Name="TrainerId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TrainerSkillsDetails">
+    <Key>
+      <PropertyRef Name="TrainerSkillsId" />
+    </Key>
+    <Property Name="TrainerSkillsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SkillOne" Type="nvarchar" MaxLength="150" />
+    <Property Name="SkillTwo" Type="nvarchar" MaxLength="100" />
+    <Property Name="SkillThree" Type="nvarchar" MaxLength="100" />
+    <Property Name="DomainOne" Type="nvarchar" MaxLength="150" />
+    <Property Name="DomainTwo" Type="nvarchar" MaxLength="150" />
+    <Property Name="DomainThree" Type="nvarchar" MaxLength="150" />
+    <Property Name="LanguagesOne" Type="nvarchar" MaxLength="50" />
+    <Property Name="LanguagesTwo" Type="nvarchar" MaxLength="50" />
+    <Property Name="LanguagesThree" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="250" />
+    <Property Name="ProjectOne" Type="nvarchar" MaxLength="200" />
+    <Property Name="ProjectTwo" Type="nvarchar" MaxLength="200" />
+    <Property Name="ProjectThree" Type="nvarchar" MaxLength="200" />
+    <Property Name="TrainerPhotoUrl" Type="nvarchar" MaxLength="150" />
+    <Property Name="TrainerProfileUrl" Type="nvarchar" MaxLength="150" />
+    <Property Name="TrainerId" Type="int" />
+  </EntityType>
+  <EntityType Name="TrainerTrainingDetails">
+    <Key>
+      <PropertyRef Name="TrainerTrainID" />
+    </Key>
+    <Property Name="TrainerTrainID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Course" Type="nvarchar" MaxLength="100" />
+    <Property Name="Organization" Type="nvarchar" MaxLength="100" />
+    <Property Name="FromMonth" Type="int" />
+    <Property Name="FromYear" Type="int" />
+    <Property Name="ToMonth" Type="int" />
+    <Property Name="ToYear" Type="int" />
+    <Property Name="Description" Type="nvarchar" MaxLength="250" />
+    <Property Name="TrainerId" Type="int" />
+  </EntityType>
+  <EntityType Name="TrainerWorkDetails">
+    <Key>
+      <PropertyRef Name="TrainerWorkId" />
+    </Key>
+    <Property Name="TrainerWorkId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Designation" Type="nvarchar" MaxLength="150" />
+    <Property Name="Organization" Type="nvarchar" MaxLength="150" />
+    <Property Name="FromMonth" Type="int" />
+    <Property Name="FromYear" Type="int" />
+    <Property Name="ToMonth" Type="int" />
+    <Property Name="ToYear" Type="int" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="TrainerId" Type="int" />
+  </EntityType>
+  <EntityType Name="UserLog">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TrainerId" Type="int" />
+    <Property Name="LoginDate" Type="datetime" />
+    <Property Name="LoginTime" Type="timestamp" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityContainer Name="DBModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TrainerEdnDetails" EntityType="Self.TrainerEdnDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TrainerMaster" EntityType="Self.TrainerMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TrainerPersonalDetails" EntityType="Self.TrainerPersonalDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TrainerSkillsDetails" EntityType="Self.TrainerSkillsDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TrainerTrainingDetails" EntityType="Self.TrainerTrainingDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TrainerWorkDetails" EntityType="Self.TrainerWorkDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserLog" EntityType="Self.UserLog" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

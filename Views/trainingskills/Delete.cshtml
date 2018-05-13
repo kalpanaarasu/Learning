@@ -1,0 +1,152 @@
+﻿@model Learning.Models.TrainerSkillsDetail
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TrainerSkillsDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SkillOne)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SkillOne)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SkillTwo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SkillTwo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SkillThree)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SkillThree)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DomainOne)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DomainOne)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DomainTwo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DomainTwo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DomainThree)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DomainThree)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LanguagesOne)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LanguagesOne)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LanguagesTwo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LanguagesTwo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LanguagesThree)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LanguagesThree)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectOne)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProjectOne)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectTwo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProjectTwo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectThree)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProjectThree)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrainerPhotoUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrainerPhotoUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrainerProfileUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrainerProfileUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrainerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrainerId)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

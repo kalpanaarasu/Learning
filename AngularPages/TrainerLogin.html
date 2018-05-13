@@ -1,0 +1,19 @@
+﻿
+<div ng-controller="loginController" height:300px;width:300px>
+    <div>
+        <div class="jumbotron">
+            <h2 >{{message}}</h2>
+        </div>
+        <form name="f1">
+        <div class="row">
+            <div class="col-md-2" >
+                Email<input type="text" ng-model="TrainerEmail" name="cTrainerEmail" ng-class="Submitted?'ng-dirty':''" required autofocus autocomplete="on" /><br />
+                <span class="error" ng-show="(f1.cTrainerEmail.$dirty || Submitted) && f1.cTrainerEmail.$error.required">Email Required</span>
+                Password <input type="password" ng-model="TrainerPassword" name="cTrainerPassword" ng-class="Submitted?'ng-dirty':''" required autofocus autocomplete="on" /><br />
+                <span class="error" ng-show="(f1.cTrainerPassword.$dirty || Submitted) && f1.cTrainerPassword.$error.required">Password Required</span>
+                 <input type="button" value="Login" ng-click="login()" /><br />
+            </div>
+        </div>
+            </form>
+    </div>
+</div>

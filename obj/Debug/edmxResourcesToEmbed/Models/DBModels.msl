@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBModelStoreContainer" CdmEntityContainer="TrainerDemoEntities">
+    <EntitySetMapping Name="TrainerMasters">
+      <EntityTypeMapping TypeName="DBModel.TrainerMaster">
+        <MappingFragment StoreEntitySet="TrainerMaster">
+          <ScalarProperty Name="TrainerId" ColumnName="TrainerId" />
+          <ScalarProperty Name="TrainerName" ColumnName="TrainerName" />
+          <ScalarProperty Name="TrainerEmail" ColumnName="TrainerEmail" />
+          <ScalarProperty Name="TrainerPassword" ColumnName="TrainerPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrainerSkillsDetails">
+      <EntityTypeMapping TypeName="DBModel.TrainerSkillsDetail">
+        <MappingFragment StoreEntitySet="TrainerSkillsDetails">
+          <ScalarProperty Name="TrainerSkillsId" ColumnName="TrainerSkillsId" />
+          <ScalarProperty Name="SkillOne" ColumnName="SkillOne" />
+          <ScalarProperty Name="SkillTwo" ColumnName="SkillTwo" />
+          <ScalarProperty Name="SkillThree" ColumnName="SkillThree" />
+          <ScalarProperty Name="DomainOne" ColumnName="DomainOne" />
+          <ScalarProperty Name="DomainTwo" ColumnName="DomainTwo" />
+          <ScalarProperty Name="DomainThree" ColumnName="DomainThree" />
+          <ScalarProperty Name="LanguagesOne" ColumnName="LanguagesOne" />
+          <ScalarProperty Name="LanguagesTwo" ColumnName="LanguagesTwo" />
+          <ScalarProperty Name="LanguagesThree" ColumnName="LanguagesThree" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ProjectOne" ColumnName="ProjectOne" />
+          <ScalarProperty Name="ProjectTwo" ColumnName="ProjectTwo" />
+          <ScalarProperty Name="ProjectThree" ColumnName="ProjectThree" />
+          <ScalarProperty Name="TrainerPhotoUrl" ColumnName="TrainerPhotoUrl" />
+          <ScalarProperty Name="TrainerProfileUrl" ColumnName="TrainerProfileUrl" />
+          <ScalarProperty Name="TrainerId" ColumnName="TrainerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrainerTrainingDetails">
+      <EntityTypeMapping TypeName="DBModel.TrainerTrainingDetail">
+        <MappingFragment StoreEntitySet="TrainerTrainingDetails">
+          <ScalarProperty Name="TrainerTrainID" ColumnName="TrainerTrainID" />
+          <ScalarProperty Name="Course" ColumnName="Course" />
+          <ScalarProperty Name="Organization" ColumnName="Organization" />
+          <ScalarProperty Name="FromMonth" ColumnName="FromMonth" />
+          <ScalarProperty Name="FromYear" ColumnName="FromYear" />
+          <ScalarProperty Name="ToMonth" ColumnName="ToMonth" />
+          <ScalarProperty Name="ToYear" ColumnName="ToYear" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="TrainerId" ColumnName="TrainerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrainerWorkDetails">
+      <EntityTypeMapping TypeName="DBModel.TrainerWorkDetail">
+        <MappingFragment StoreEntitySet="TrainerWorkDetails">
+          <ScalarProperty Name="TrainerWorkId" ColumnName="TrainerWorkId" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Organization" ColumnName="Organization" />
+          <ScalarProperty Name="FromMonth" ColumnName="FromMonth" />
+          <ScalarProperty Name="FromYear" ColumnName="FromYear" />
+          <ScalarProperty Name="ToMonth" ColumnName="ToMonth" />
+          <ScalarProperty Name="ToYear" ColumnName="ToYear" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="TrainerId" ColumnName="TrainerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserLogs">
+      <EntityTypeMapping TypeName="DBModel.UserLog">
+        <MappingFragment StoreEntitySet="UserLog">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="TrainerId" ColumnName="TrainerId" />
+          <ScalarProperty Name="LoginDate" ColumnName="LoginDate" />
+          <ScalarProperty Name="LoginTime" ColumnName="LoginTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrainerEdnDetails">
+      <EntityTypeMapping TypeName="DBModel.TrainerEdnDetail">
+        <MappingFragment StoreEntitySet="TrainerEdnDetails">
+          <ScalarProperty Name="TrainerId" ColumnName="TrainerId" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+          <ScalarProperty Name="ToYear" ColumnName="ToYear" />
+          <ScalarProperty Name="ToMonth" ColumnName="ToMonth" />
+          <ScalarProperty Name="FromYear" ColumnName="FromYear" />
+          <ScalarProperty Name="FromMonth" ColumnName="FromMonth" />
+          <ScalarProperty Name="Institution" ColumnName="Institution" />
+          <ScalarProperty Name="Course" ColumnName="Course" />
+          <ScalarProperty Name="TrainerEdnId" ColumnName="TrainerEdnId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="DBModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrainerPersonalDetails">
+      <EntityTypeMapping TypeName="DBModel.TrainerPersonalDetail">
+        <MappingFragment StoreEntitySet="TrainerPersonalDetails">
+          <ScalarProperty Name="TrainerId" ColumnName="TrainerId" />
+          <ScalarProperty Name="EmailTwo" ColumnName="EmailTwo" />
+          <ScalarProperty Name="EmailOne" ColumnName="EmailOne" />
+          <ScalarProperty Name="PhoneTwo" ColumnName="PhoneTwo" />
+          <ScalarProperty Name="PhoneOne" ColumnName="PhoneOne" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="AddressPartTwo" ColumnName="AddressPartTwo" />
+          <ScalarProperty Name="AddressPartOne" ColumnName="AddressPartOne" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="TrainerPersonalId" ColumnName="TrainerPersonalId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

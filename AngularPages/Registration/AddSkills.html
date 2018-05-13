@@ -1,0 +1,83 @@
+﻿<div ng-controller="skillsController" class="divStyle">
+    <div class="jumbotron">
+        <h2>Skills Detaiils</h2>
+        <a href="#trainerPersonal">AddPersonal</a>||<a href="#education">Add Education</a>||<a href="#work">Work Experience</a>||
+        <a href="#trainingExp">Training Experience</a>||<a href="#skills">Add Skills</a>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <input type="button" value="Add" ng-click="clear()" /><br />
+            <input type="hidden" ng-model="TrainerSkillsId" readonly /><br />
+            SkillOne: <input type="text" ng-model="SkillOne" /><br />
+            SkillTwo:<input type="text" ng-model="SkillTwo" /><br />
+            SkillThree:<input type="text" ng-model="SkillThree" /><br />
+            DomainOne:<input type="text" ng-model="DomainOne" /><br />
+            DomainTwo:<input type="text" ng-model="DomainTwo" /><br />
+            DomainThree:<input type="text" ng-model="DomainThree" /><br />
+            LanguagesOne:<input type="text" ng-model="LanguagesOne" /><br />
+            LanguagesTwo:<input type="text" ng-model="LanguagesTwo" /><br />
+            LanguagesThree:<input type="text" ng-model="LanguagesThree" /><br />
+            Description:<input type="text" ng-model="Description" /><br />
+            ProjectOne:<input type="text" ng-model="ProjectOne" /><br />
+            ProjectTwo:<input type="text" ng-model="ProjectTwo" /><br />
+            ProjectThree:<input type="text" ng-model="ProjectThree" /><br />
+            TrainerPhotoUrl:<input type="text" ng-model="TrainerPhotoUrl" /><br />
+            TrainerProfileUrl:<input type="text" ng-model="TrainerProfileUrl" /><br />
+            <input type="button" value="save" ng-click="AddSkillsData()" /><input type="button" value="Delete" ng-click="delete()" />
+            
+         </div>
+    </div>
+    <!--list-->
+    <div id="dvCollection">
+        <h3>------------------------------------------------</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>TrainerSkillsId</th>
+                    <th>SkillOne</th>
+                    <th>SkillTwo</th>
+                    <th>SkillThree</th>
+                    <th>DomainOne</th>
+                    <th>DomainTwo</th>
+                    <th>DomainThree</th>
+                    <th>LanguagesOne</th>
+                    <th>LanguagesTwo</th>
+                    <th>LanguagesThree</th>
+                    <th>Description</th>
+                    <th>ProjectOne</th>
+                    <th>ProjectTwo</th>
+                    <th>ProjectThree</th>
+                    <th>TrainerPhotoUrl</th>
+                    <th>TrainerProfileUrl</th>
+                    <th>TrainerId</th>
+
+                </tr>
+            </thead>
+            <tbody ng-repeat=" item in TrainerSkillsDetails | filter: {TrainerId:(query|number)}">
+                <tr ng-click=" get(item)">
+
+                    <td> <span>{{item.TrainerSkillsId}}</span></td>
+                    <td> <span>{{item.SkillOne}}</span></td>
+                    <td> <span>{{item.SkillTwo}}</span></td>
+                    <td> <span>{{item.SkillThree}}</span></td>
+                    <td> <span>{{item.DomainOne}}</span></td>
+                    <td> <span>{{item.DomainTwo}}</span></td>
+                    <td> <span>{{item.DomainThree}}</span></td>
+                    <td> <span>{{item.LanguagesOne}}</span></td>
+                    <td> <span>{{item.LanguagesTwo}}</span></td>
+                    <td> <span>{{item.LanguagesThree}}</span></td>
+                    <td> <span>{{item.Description}}</span></td>
+                    <td> <span>{{item.ProjectOne}}</span></td>
+                    <td> <span>{{item.ProjectTwo}}</span></td>
+                    <td> <span>{{item.ProjectThree}}</span></td>
+                    <td> <span>{{item.TrainerPhotoUrl}}</span></td>
+                    <td> <span>{{item.TrainerProfileUrl}}</span></td>
+                    <td> <span>{{item.TrainerId}}</span></td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>------------------------------------------------</h3>
+    </div>
+
+
+        </div>

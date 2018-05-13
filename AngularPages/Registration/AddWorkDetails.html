@@ -1,0 +1,49 @@
+﻿<div ng-controller="workController" class="divStyle">
+    <div class="jumbotron">
+        <h2>Work Experience</h2>
+        <a href="#trainerPersonal">AddPersonal</a>||<a href="#education">Add Education</a>||<a href="#work">Work Experience</a>||
+        <a href="#trainingExp">Training Experience</a>||<a href="#skills">Add Skills</a>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <input type="button" value="Add" ng-click="clear()" /><br />
+            <input type="hidden" ng-model="TrainerWorkId"  /><br />
+            Designation:<input type="text" ng-model="Designation" /><br />
+            Organization: <input type="text" ng-model="Organization" /><br />
+            From <input type="text" ng-model="FromMonth" />|<input type="text" ng-model="FromYear" /><br />
+            To<input type="text" ng-model="ToMonth" />|<input type="text" ng-model="ToYear" /><br />
+            Description:  <input type="text" ng-model="Description" /><br />
+            <input type="button" value="save" ng-click="AddWorkData()" /><input type="button" value="Delete" ng-click="delete()" />
+        </div>
+    </div>
+    <!--list-->
+    <div id="dvCollection">
+        <h3>------------------------------------------------</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>TrainerWorkId</th>
+                    <th>Designation</th>
+                    <th>Organization</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Description</th>
+                    <th>trainerid</th>
+                </tr>
+            </thead>
+            <tbody ng-repeat=" item in TrainerWorkDetails | filter: {TrainerId:(query|number)}">
+                <tr ng-click=" get(item)">
+
+                    <td> <span>{{item.TrainerWorkId}}</span></td>
+                    <td> <span>{{item.Designation}}</span></td>
+                    <td> <span>{{item.Organization}}</span></td>
+                    <td> <span>{{item.FromMonth+" "+item.FromYear}}</span></td>
+                    <td> <span>{{item.ToMonth+" "+item.ToYear}}</span></td>
+                    <td> <span>{{item.Description}}</span></td>
+                    <td> <span>{{item.TrainerId}}</span></td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>------------------------------------------------</h3>
+    </div>
+ </div>

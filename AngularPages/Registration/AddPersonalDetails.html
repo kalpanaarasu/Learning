@@ -1,0 +1,81 @@
+﻿<div ng-controller="personalController" class="divStyle">
+    <div class="jumbotron">
+        <h2>Personal Detaiils</h2>
+        <a href="#trainerPersonal">AddPersonal</a>||<a href="#education">Add Education</a>||<a href="#work">Work Experience</a>||
+        <a href="#trainingExp">Training Experience</a>||<a href="#skills">Add Skills</a>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <input type="button" value="Add" ng-click="clear()" /><br />
+                <input type="hidden" ng-model="TrainerPersonalId" /><br />
+            First Name:    <input type="text" ng-model="FirstName" /><br />
+            Last Name:     <input type="text" ng-model="LastName" /><br />
+            Father Name:   <input type="text" ng-model="FatherName" /><br />
+            Date of Birth: <input type="date" ng-model="DateOfBirth" /><br />
+            Gender:        <input type="radio" ng-model="Gender" value="Male" checked/>Male<input type="radio" value="Female" ng-model="Gender"/>Female<br />
+            Address:       <textarea cols="50" rows="2" ng-model="AddressPartOne" ></textarea><br />
+                           <textarea cols="50" rows="2" ng-model="AddressPartTwo" ></textarea><br />
+            City:          <input type="text" ng-model="City" /><br />
+            Pin:           <input type="text" ng-model="Pincode" /><br />
+            State:         <input type="text" ng-model="State" /><br />
+            Country:       <input type="text" ng-model="Country" /><br />
+            Phone:         <input type="tel" ng-model="PhoneOne" /><br />
+            Alternate:     <input type="tel" ng-model="PhoneTwo" /><br />
+            Email:         <input type="email" ng-model="EmailOne" /><br />
+            Alternate:     <input type="email" ng-model="EmailTwo" /><br />
+            <input type="button" value="save" ng-click="addPersonalData()" /><input type="button" value="Delete" ng-click="delete()" />
+        </div>
+    </div>
+
+    <!--list-->
+    <div id="dvCollection">
+        <h3>------------------------------------------------</h3>
+        <table>
+            <thead>
+                <tr>
+                   <th>TrainerPersonalId</th>
+                    <th>FirstName</th>
+                    <th>LastName</th>
+                    <th>FatherName</th>
+                    <th>DateOfBirth</th>
+                    <th>Gender</th>
+                    <th>AddressPartOne</th>
+                    <th>AddressPartTwo</th>
+                    <th>City</th>
+                    <th>Pincode</th>
+                    <th>State</th>
+                    <th>Country</th>
+                    <th>PhoneOne</th>
+                    <th>PhoneTwo</th>
+                    <th>EmailOne</th>
+                    <th>EmailTwo</th>
+                    <th>TrainerId</th>
+                    
+                </tr>
+            </thead>
+            <tbody ng-repeat=" item in TrainerPersonalDetails | filter: {TrainerId:(query|number)}">
+                <tr ng-click=" get(item)">
+
+                    <td> <span>{{item.TrainerPersonalId}}</span></td>
+                    <td> <span>{{item.FirstName}}</span></td>
+                    <td> <span>{{item.LastName}}</span></td>
+                    <td> <span>{{item.FatherName}}</span></td>
+                    <td> <span>{{item.DateOfBirth}}</span></td>
+                    <td> <span>{{item.Gender}}</span></td>
+                    <td> <span>{{item.AddressPartOne}}</span></td>
+                    <td> <span>{{item.AddressPartTwo}}</span></td>
+                    <td> <span>{{item.City}}</span></td>
+                    <td> <span>{{item.Pincode}}</span></td>
+                    <td> <span>{{item.State}}</span></td>
+                    <td> <span>{{item.Country}}</span></td>
+                    <td> <span>{{item.PhoneOne}}</span></td>
+                    <td> <span>{{item.PhoneTwo}}</span></td>
+                    <td> <span>{{item.EmailOne}}</span></td>
+                    <td> <span>{{item.EmailTwo}}</span></td>
+                    <td> <span>{{item.TrainerId}}</span></td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>------------------------------------------------</h3>
+    </div>
+</div>  

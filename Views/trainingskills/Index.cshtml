@@ -1,0 +1,123 @@
+﻿@model IEnumerable<Learning.Models.TrainerSkillsDetail>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SkillOne)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SkillTwo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SkillThree)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DomainOne)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DomainTwo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DomainThree)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LanguagesOne)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LanguagesTwo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LanguagesThree)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProjectOne)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProjectTwo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProjectThree)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrainerPhotoUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrainerProfileUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrainerId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SkillOne)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SkillTwo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SkillThree)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DomainOne)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DomainTwo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DomainThree)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LanguagesOne)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LanguagesTwo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LanguagesThree)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProjectOne)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProjectTwo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProjectThree)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrainerPhotoUrl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrainerProfileUrl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrainerId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TrainerSkillsId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TrainerSkillsId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TrainerSkillsId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TrainerMaster">
+    <Key>
+      <PropertyRef Name="TrainerId" />
+    </Key>
+    <Property Name="TrainerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TrainerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TrainerEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TrainerPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TrainerSkillsDetail">
+    <Key>
+      <PropertyRef Name="TrainerSkillsId" />
+    </Key>
+    <Property Name="TrainerSkillsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SkillOne" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="SkillTwo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SkillThree" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DomainOne" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="DomainTwo" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="DomainThree" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="LanguagesOne" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LanguagesTwo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LanguagesThree" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ProjectOne" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ProjectTwo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ProjectThree" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="TrainerPhotoUrl" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="TrainerProfileUrl" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="TrainerId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TrainerTrainingDetail">
+    <Key>
+      <PropertyRef Name="TrainerTrainID" />
+    </Key>
+    <Property Name="TrainerTrainID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Course" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Organization" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FromMonth" Type="Int32" />
+    <Property Name="FromYear" Type="Int32" />
+    <Property Name="ToMonth" Type="Int32" />
+    <Property Name="ToYear" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="TrainerId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TrainerWorkDetail">
+    <Key>
+      <PropertyRef Name="TrainerWorkId" />
+    </Key>
+    <Property Name="TrainerWorkId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Designation" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Organization" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="FromMonth" Type="Int32" />
+    <Property Name="FromYear" Type="Int32" />
+    <Property Name="ToMonth" Type="Int32" />
+    <Property Name="ToYear" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="TrainerId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="UserLog">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TrainerId" Type="Int32" />
+    <Property Name="LoginDate" Type="DateTime" Precision="3" />
+    <Property Name="LoginTime" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityContainer Name="TrainerDemoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TrainerMasters" EntityType="Self.TrainerMaster" />
+    <EntitySet Name="TrainerSkillsDetails" EntityType="Self.TrainerSkillsDetail" />
+    <EntitySet Name="TrainerTrainingDetails" EntityType="Self.TrainerTrainingDetail" />
+    <EntitySet Name="TrainerWorkDetails" EntityType="Self.TrainerWorkDetail" />
+    <EntitySet Name="UserLogs" EntityType="Self.UserLog" />
+    <EntitySet Name="TrainerEdnDetails" EntityType="DBModel.TrainerEdnDetail" />
+    <EntitySet Name="sysdiagrams" EntityType="DBModel.sysdiagram" />
+    <EntitySet Name="TrainerPersonalDetails" EntityType="DBModel.TrainerPersonalDetail" />
+  </EntityContainer>
+  <EntityType Name="TrainerEdnDetail">
+    <Key>
+      <PropertyRef Name="TrainerEdnId" />
+    </Key>
+    <Property Name="TrainerEdnId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Course" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Institution" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FromMonth" Type="Int32" />
+    <Property Name="FromYear" Type="Int32" />
+    <Property Name="ToMonth" Type="Int32" />
+    <Property Name="ToYear" Type="Int32" />
+    <Property Name="Grade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TrainerId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TrainerPersonalDetail">
+    <Key>
+      <PropertyRef Name="TrainerPersonalId" />
+    </Key>
+    <Property Name="TrainerPersonalId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FatherName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddressPartOne" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="AddressPartTwo" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Pincode" Type="Int32" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneOne" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneTwo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmailOne" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmailTwo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TrainerId" Type="Int32" Nullable="false" />
+  </EntityType>
+</Schema>
